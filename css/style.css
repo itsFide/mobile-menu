@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap');
+*,::after,::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Roboto', sans-serif;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+.menu{
+    overflow: hidden;
+}
+.container{
+    max-width: 1168px;
+    margin: auto;
+}
+.logo img{
+    width: 81px;
+    height: 47px;
+}
+.submenu-top{
+    position: relative;
+    display: flex;
+    width: 100%;
+}
+.submenu-top::before{
+    content: "";
+    width: 300%;
+    left: -100%;
+    position: absolute;
+    background-color: #252525;
+    height: 100%;
+    z-index: -1;
+}
+.submenu-bottom{
+    width: 100%;
+    position: relative;
+}
+.submenu-bottom::before{
+    content: "";
+    width: 300%;
+    left: -100%;
+    position: absolute;
+    background-color: #FFE717;
+    height: 100%;
+    z-index: -1;
+}
+.menu-inner{
+    display: flex;
+    align-items: center;
+}
+.menu-list{
+    display: flex;
+}
+.submenu-top-list{
+    
+    padding: 10px 0;
+    padding-left: 55px;
+}
+.submenu-top-list > li{
+    margin-right: 65px;
+}
+.submenu-top-list > li > a{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 18px;
+    /* identical to box height */
+    text-decoration: none;
+    
+    color: #999999;
+
+}
+.submenu-top-phone{
+    display: flex;
+    align-items: center;
+}
+.submenu-top-phone a{
+    font-family: Roboto;
+    margin-left: 5px;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 18px;
+    /* identical to box height */
+    text-decoration: none;
+    
+    color: #999999;
+    
+}
+.submenu-bottom-list{
+    padding: 11px 0;
+    padding-left: 30px;
+}
+.submenu-bottom-list > li{
+    margin-right: 30px;
+}
+.submenu-bottom-list > li:last-child{
+    margin-right: 0px;
+}
+.submenu-bottom-list > li > a{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 18px;
+    /* identical to box height */
+    
+    
+    color: #252525;
+}
+.burger{
+    display: none;
+    width: 30px;
+    height: 20px;
+    position: relative;
+}
+
+.burger span{
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    position: absolute;
+    transition: all 0.4s;
+}
+.burger span:nth-child(1){
+    top: 0;
+}
+.burger span:nth-child(2){
+    top: 50%;
+    transform:translateY(-50%)
+}
+.burger span:nth-child(3){
+    bottom: 0;
+}
+.burger.active span:nth-child(1){
+    transform:rotate(45deg);
+    top: 40%;
+}
+.burger.active span:nth-child(2){
+    opacity: 0;
+    transform:rotate(45deg);
+    top: 40%;
+}
+.burger.active span:nth-child(3){
+    transform:rotate(-45deg);
+    bottom: 50%;
+}
+.mobile-menu{
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    transition: all 1s;
+    position: absolute;
+    left: 0;
+    top: 8%;
+}
+.mobile-submenu-top > li > a{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 18px;
+    /* identical to box height */
+    
+    
+    color: #999999;
+
+}
+.mobile-submenu-top > li{
+    margin-top: 15px;
+}
+.mobile-submenu-bottom > li{
+    margin-top: 15px;
+}
+.mobile-submenu-top > li:last-child{
+    margin-bottom: 15px;
+}
+.mobile-submenu-bottom > li:last-child{
+    margin-bottom: 15px;
+}
+.mobile-submenu-bottom > li > a{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 18px;
+    color: #252525;
+
+}
+@media screen and (max-width:1210px) {
+    .container{
+        padding: 0 15px;
+    }
+    .submenu-top-list > li{
+        margin-right: 45px;
+    }
+    .submenu-bottom-list > li{
+        margin-right: 25px;
+    }
+}
+@media screen and (max-width:1080px){
+    .burger{
+        display: block;
+        z-index: 10;
+    }
+    .logo{
+        z-index: 10;
+    }
+    .submenu-top, .submenu-bottom{
+        display: none;
+    }
+    .menu{
+        background-color: #252525;
+    }
+    .menu-inner{
+        justify-content: space-between;
+    }
+    
+    .mobile-menu.active{
+        height: 100%;
+        
+        
+    }
+    .mobile-submenu-top{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color:#252525;
+    }
+    .mobile-submenu-bottom{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        background-color:#FFE717;
+    }
+    
+}
